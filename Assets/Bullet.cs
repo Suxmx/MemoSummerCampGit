@@ -26,4 +26,12 @@ public class Bullet : MonoBehaviour
     {
         _Direction = dir;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Env"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
